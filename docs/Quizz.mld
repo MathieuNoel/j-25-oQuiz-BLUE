@@ -1,0 +1,15 @@
+LEVEL(id, name)
+USER(id, firstname, lastname, email, password)
+QUIZ(id, title, description, #user_id)
+QUESTION(id, description, anecdote, wiki, #level_id, #answer_id, #quiz_id)
+ANSWER(id, description, #question_id)
+TAG(id, name)
+QUIZ_HAS_TAG(#quiz_id, #tag_id)
+
+
+Pour définir une clef étrangère dans un MLD on a deux solutions :
+
+Soit on écrit directement son nom comme ceci : #level_id
+Soit on précise le nom de la table sur laquelle on pointe et entre parenthèse on indique sa clef primaire (id) : #level(id)
+
+IL faut toujours préfixer le nom par une #.
